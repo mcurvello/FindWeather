@@ -3,7 +3,7 @@ import { FontSource } from "expo-font";
 
 export const loadFonts = async () => {
   await Font.loadAsync({
-    Overpass_300Regular:
+    Overpass_300Light:
       require("../assets/fonts/Overpass-Light.ttf") as FontSource,
     Overpass_400Regular:
       require("../assets/fonts/Overpass-Regular.ttf") as FontSource,
