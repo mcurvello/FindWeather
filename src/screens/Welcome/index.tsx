@@ -6,6 +6,8 @@ import theme from "../../theme";
 import Styled from "./styles";
 
 import CloudAndThunder from "../../assets/images/cloud-and-thunder.png";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { IStackRoutes } from "../../routes/stack.routes";
 
 const LetterBold = () => (
   <Text
@@ -17,7 +19,16 @@ const LetterBold = () => (
   </Text>
 );
 
-const Welcome = (): JSX.Element => {
+type WelcomeScreenNavigationProp = NativeStackNavigationProp<
+  IStackRoutes,
+  "Welcome"
+>;
+
+type Props = {
+  navigation: WelcomeScreenNavigationProp;
+};
+
+const Welcome = ({ navigation }: Props): JSX.Element => {
   return (
     <Styled.Container>
       <SafeAreaView>
@@ -49,7 +60,9 @@ const Welcome = (): JSX.Element => {
           borderColor={theme.colors.gray300}
           borderRadius={18}
           height={54}
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
         >
           <Text
             fontFamily={theme.fontFamily.OverpassRegular}

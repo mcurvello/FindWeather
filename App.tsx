@@ -1,5 +1,7 @@
+import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
-import Welcome from "./src/screens/Welcome";
+import Routes from "./src/routes";
+import theme from "./src/theme";
 import { loadFonts } from "./src/theme/fonts";
 
 export default function App() {
@@ -18,5 +20,10 @@ export default function App() {
     return;
   }
 
-  return <Welcome />;
+  return (
+    <>
+      <StatusBar style="light" backgroundColor={theme.colors.dark} />
+      <Routes />
+    </>
+  );
 }
