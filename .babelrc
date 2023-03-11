@@ -1,0 +1,13 @@
+{
+  "presets": ["babel-preset-expo"],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": false,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ]
+}
